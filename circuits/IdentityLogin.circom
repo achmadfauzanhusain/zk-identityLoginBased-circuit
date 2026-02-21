@@ -18,6 +18,7 @@ template IdentityLogin(depth) {
 
     component leafHash = Poseidon(1);
     leafHash.inputs[0] <== identity;
+    
     intermediateHashes[0] <== leafHash.out;
 
     for (var i = 0; i < depth; i++) {
@@ -37,4 +38,4 @@ template IdentityLogin(depth) {
     isValid <== 1 - (difference * difference);
 }
 
-component main = IdentityLogin(3);
+component main = IdentityLogin(2);
